@@ -12,3 +12,8 @@
 
 - convex uses svix
 - need to ensure webhook is sent from clerk
+
+webhook to connect vapi to convex to gemini
+
+- api key stored in convex env because we are using the http request within the convex folder
+  npm i @google/generative-ai -> to use gemini
