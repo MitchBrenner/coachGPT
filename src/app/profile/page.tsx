@@ -176,41 +176,44 @@ const ProfilePage = () => {
                     </div>
                   </div> */}
 
-                  <Accordion type="multiple" className="space-y-4">
+                  <div className="space-y-4">
                     {currentPlan.dietPlan.meals.map((meal, index) => (
-                      <AccordionItem
+                      <div
                         key={index}
-                        value={meal.name}
                         className="border rounded-lg overflow-hidden"
                       >
-                        <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-primary/10 font-mono">
-                          <div className="flex justify-between items-center w-full">
-                            <span className="text-primary">{meal.name}</span>
-                            <div className="text-xs text-muted-foreground">
-                              {meal.foods.length} items
-                            </div>
+                        {/* <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-primary/10 font-mono"> */}
+                        <div className="flex justify-between items-center w-full">
+                          <span className="text-primary">{meal.name}</span>
+                          <div className="text-xs text-muted-foreground">
+                            {meal.foods.length} items
                           </div>
-                        </AccordionTrigger>
-                        <AccordionContent>
+                        </div>
+                        {/* </AccordionTrigger> */}
+                        <div>
                           <div className="space-y-3 mt-2">
-                            {currentPlan.dietPlan.meals.map((meal, index) => (
+                            {meal.foods.map((meal, index) => (
                               <div
                                 key={index}
                                 className="border b0rder-border rounded-lg overlfow-hidden p-4"
                               >
-                                <div className="flex items-center gap-2 mb-3">
-                                  <div className="w-2 h-2 rounded-ufll bg-primary"></div>
-                                  <h4 className="font-mono text-pirmary">
-                                    {meal.name}
-                                  </h4>
-                                </div>
+                                <ul className="space-y-2">
+                                  <li
+                                    key={index}
+                                    className="flex justify-between items-center"
+                                  >
+                                    <span className="text-foreground">
+                                      {meal}
+                                    </span>
+                                  </li>
+                                </ul>
                               </div>
                             ))}
                           </div>
-                        </AccordionContent>
-                      </AccordionItem>
+                        </div>
+                      </div>
                     ))}
-                  </Accordion>
+                  </div>
                 </TabsContent>
               </Tabs>
             </div>
