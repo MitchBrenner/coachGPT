@@ -97,7 +97,7 @@ function page() {
               <div className="relative aspect-sqaure max-w-lg mx-auto">
                 <div className="relative overflow-hidden rounded-lg bg-cyber-black">
                   <Image
-                    src={"/HERO AI3.png"}
+                    src={"/hero2.png"}
                     alt="AI fitness trainer"
                     className="size-full object-cover object-center"
                     width={500}

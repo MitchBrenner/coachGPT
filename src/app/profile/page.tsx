@@ -1,7 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { api } from "../../../convex/_generated/api";
 import ProfileHeader from "@/components/ProfileHeader";
 import NoFitnessPlan from "@/components/NoFitnessPlan";
@@ -28,6 +28,9 @@ const ProfilePage = () => {
   const currentPlan = selectedPlanId
     ? allPlans?.find((plan) => plan._id === selectedPlanId)
     : activePlan;
+
+  console.log("helollasjdflaskhdj;flaksdjf;alksjdf;aslkdfja;sldkjf");
+  console.log("currentPlan.dietPlan.meals", activePlan?.dietPlan);
 
   return (
     <section className="relative z-10 pt-12 pb-32 flex-grow container mx-auto px-4">
@@ -117,7 +120,7 @@ const ProfilePage = () => {
                         <AccordionItem
                           key={index}
                           value={exerciseDay.day}
-                          className="border rounded-lg overflow-hidden"
+                          className="border rounded-lg overflow-hidden "
                         >
                           <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-primary/10 font-mono">
                             <div className="flex justify-between items-center w-full">
@@ -130,7 +133,7 @@ const ProfilePage = () => {
                             </div>
                           </AccordionTrigger>
                           <AccordionContent>
-                            <div className="space-y-3 mt-2">
+                            <div className="space-y-3 mt-2 px-6">
                               {exerciseDay.routines.map(
                                 (routine, routineIndex) => (
                                   <div
@@ -138,7 +141,7 @@ const ProfilePage = () => {
                                     className="border border-border rounded p-3 bg-background/50"
                                   >
                                     <div className="flex justify-between items-start mb-2">
-                                      <h4 className="flex justify-between text-foreground">
+                                      <h4 className="flex justify-between text-foreground text-semibold text-md">
                                         {routine.name}
                                       </h4>
                                       <div className="flex items-center gap-2">
@@ -177,31 +180,38 @@ const ProfilePage = () => {
                   </div> */}
 
                   <div className="space-y-4">
+                    <div className="flex items-center gap-2 font-mono">
+                      <p className="text-xs text-muted-foreground">
+                        DAILY COLORIE TARGET:{" "}
+                      </p>
+                      <span className="text-xl text-semibold text-primary">
+                        {currentPlan.dietPlan.dailyCalories} CAL
+                      </span>
+                    </div>
                     {currentPlan.dietPlan.meals.map((meal, index) => (
                       <div
                         key={index}
                         className="border rounded-lg overflow-hidden"
                       >
                         {/* <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-primary/10 font-mono"> */}
-                        <div className="flex justify-between items-center w-full">
-                          <span className="text-primary">{meal.name}</span>
+                        <div className="flex justify-between items-center w-full px-4 py-2 border-b bg-primary/10 font-mono">
+                          <span className="text-primary font-semibold text-lg">
+                            {meal.name}
+                          </span>
                           <div className="text-xs text-muted-foreground">
                             {meal.foods.length} items
                           </div>
                         </div>
-                        {/* </AccordionTrigger> */}
-                        <div>
+                        <div className="pb-4">
                           <div className="space-y-3 mt-2">
                             {meal.foods.map((meal, index) => (
-                              <div
-                                key={index}
-                                className="border b0rder-border rounded-lg overlfow-hidden p-4"
-                              >
+                              <div key={index} className="overlfow-hidden">
                                 <ul className="space-y-2">
                                   <li
                                     key={index}
-                                    className="flex justify-between items-center"
+                                    className="flex space-x-2 items-center pl-8"
                                   >
+                                    <div className="w-2 h-2 rounded-full bg-primary/50" />
                                     <span className="text-foreground">
                                       {meal}
                                     </span>

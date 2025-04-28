@@ -233,13 +233,13 @@ const GenerateProgramPage = () => {
           <Card className="bg-card/90 backdrop-blur-sm border overflow-hidden relative">
             <div className=" aspect-video flex flex-col items-center justify-center p-6 relative">
               {/* user image */}
-              <div className="relative size-32 mb-4">
+              <div className="relative size-32 mb-4  overflow-hidden">
                 <Image
                   src={user?.imageUrl || "/AI Avatar.png"}
                   alt="User"
                   width={128}
                   height={128}
-                  className="object-cover rounded-full"
+                  className="object-cover w-full h-full rounded-full "
                 />
               </div>
               <h2 className="text-xl font-bold text-foreground">You</h2>
