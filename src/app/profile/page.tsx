@@ -33,7 +33,7 @@ const ProfilePage = () => {
   console.log("currentPlan.dietPlan.meals", activePlan?.dietPlan);
 
   return (
-    <section className="relative z-10 pt-12 pb-32 flex-grow container mx-auto px-4">
+    <section className="relative z-10 pt-0 sm:pt-12 pb-10 sm:pb-32 flex-grow container mx-auto px-4">
       <ProfileHeader user={user} />
 
       {allPlans && allPlans?.length ? (
@@ -80,7 +80,7 @@ const ProfilePage = () => {
               <CornerElements />
 
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse hidden sm:block"></div>
                 <h3 className="text-lg font-bold">
                   PLAN: <span className="text-primary">{currentPlan.name}</span>
                 </h3>

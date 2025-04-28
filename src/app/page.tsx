@@ -16,7 +16,7 @@ function page() {
             <div className="absolute -top-10 left-0 w-40 h-40 border-l-2 border-t-2" />
 
             {/* Left side content */}
-            <div className="lg:col-span-7 space-y-8 relative">
+            <div className="lg:col-span-7 space-y-8 relative p-4 lg:p-0">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
                 <div>
                   <span className="text-foreground">Transform</span>
@@ -84,7 +84,7 @@ function page() {
             </div>
 
             {/* Right side content */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative hidden lg:block">
               {/* Corner pieces */}
               <div className="absolute -inset-4 pointer-events-none">
                 <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-border" />

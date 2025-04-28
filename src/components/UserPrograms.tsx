@@ -48,7 +48,7 @@ const UserPrograms = () => {
             </p>
 
             {/* STATS */}
-            <div className="flex items-center justify-center gap-16 mt-10 font-mono">
+            <div className="flex items-center justify-center gap-4 sm:gap-12 md:gap-16 mt-10 font-mono">
               <div className="flex flex-col items-center">
                 <p className="text-3xl text-primary">500+</p>
                 <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">
@@ -74,7 +74,7 @@ const UserPrograms = () => {
         </div>
 
         {/* Program cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {USER_PROGRAMS.map((program) => (
             <Card
               key={program.id}
