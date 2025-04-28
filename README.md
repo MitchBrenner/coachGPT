@@ -1,4 +1,4 @@
-# 🧠 CoachGPT — Your Personal AI Fitness Coach
+# 🧠 CoachGPT — Your Personal AI Fitness Coach  💪 
 
 **CoachGPT** is a web app built with **React** and **Next.js** that allows users to **chat with an AI assistant** to create personalized **fitness and diet plans**. Through a conversational flow, the AI gathers information about the user's goals, lifestyle, and preferences, then generates a customized workout and nutrition strategy tailored specifically for them.
 
@@ -23,13 +23,6 @@
 
 ---
 
-## 🖼️ Vapi Workflow Preview
-
-<div align="center">
-  <img src="./images/vapi-agent-workflow.jpg" width="600" />
-</div>
-
----
 
 ## 🌐 Live Demo
 
@@ -37,6 +30,15 @@ CoachGPT is available here:
 [https://coachgpt-ai.vercel.app/](https://coachgpt-ai.vercel.app/)
 
 ---
+
+## 🖼️ Vapi Workflow Preview
+
+<div align="center">
+  <img src="./images/vapi-agent-workflow.jpg" width="300" />
+</div>
+
+---
+
 
 ## 📚 Learn More
 
