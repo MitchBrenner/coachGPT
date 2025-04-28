@@ -77,6 +77,30 @@ http.route({
     }
 
     console.log("Webhook event processed:", eventType);
+
+    if (eventType === "user.created") {
+      const { id, first_name, last_name, image_url, email_addresses } =
+        evt.data;
+
+      const email = email_addresses[0].email_address;
+
+      const name = `${first_name || ""} ${last_name || ""}`.trim();
+
+      try {
+        await ctx.runMutation(api.users.updateUser, {
+          email,
+          name,
+          image: image_url,
+          clerkId: id,
+        });
+      } catch (error) {
+        console.error("Error syncing user:", error);
+        return new Response("Error syncing user", {
+          status: 500,
+        });
+      }
+    }
+
     return new Response("Webhooks processed Successfully", {
       status: 200,
     });

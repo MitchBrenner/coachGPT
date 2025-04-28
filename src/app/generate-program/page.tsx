@@ -21,6 +21,7 @@ const GenerateProgramPage = () => {
 
   const messageContainerRef = useRef<HTMLDivElement>(null);
 
+  // to ignore the "Meeting has ended" error
   useEffect(() => {
     const originalError = console.error;
 
